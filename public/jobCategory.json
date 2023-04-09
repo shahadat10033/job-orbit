@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "jobName": "Software Engineer",
+      "jobVacancy": 150,
+      "jobLogo": "https://example.com/logos/software_engineer.png"
+    },
+    {
+      "id": 2,
+      "jobName": "Marketing Manager",
+      "jobVacancy": 120,
+      "jobLogo": "https://example.com/logos/marketing_manager.png"
+    },
+    {
+      "id": 3,
+      "jobName": "Sales Representative",
+      "jobVacancy": 200,
+      "jobLogo": "https://example.com/logos/sales_representative.png"
+    },
+    {
+      "id": 4,
+      "jobName": "Graphic Designer",
+      "jobVacancy": 110,
+      "jobLogo": "https://example.com/logos/graphic_designer.png"
+    }
+  ]
+  

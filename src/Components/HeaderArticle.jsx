@@ -7,7 +7,7 @@ const HeaderArticle = () => {
       <div className="row ">
         {/* article section starts */}
         <div className="col-md-6 ">
-          <h1 style={{ fontSize: 80 }}>
+          <h1 style={{ fontSize: 80 }} className="fw-bold">
             One Step<br></br> Closer To Your<br></br>
             <span style={{ color: "#8A82FF" }}>Dream Job</span>
           </h1>
