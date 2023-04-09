@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import HeaderArticle from "./HeaderArticle";
 
 const Root = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <HeaderArticle></HeaderArticle>
+    </div>
+  );
 };
 
 export default Root;
