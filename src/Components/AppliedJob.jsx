@@ -1,8 +1,24 @@
 import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const AppliedJob = () => {
   return (
     <div className="container my-5">
+      {/*  */}
+      <div className=" d-flex justify-content-end">
+        <Dropdown>
+          <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            Filter By
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Remote</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Onset</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+      {/*  */}
+
       <div className="d-flex justify-content-between align-items-center  my-5 border px-5">
         <div className="d-flex py-3 ">
           <img src="" alt="" style={{ width: 200, height: 200 }} />

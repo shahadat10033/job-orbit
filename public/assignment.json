@@ -1,0 +1,16 @@
+[  
+    
+{"id":1,"assignmentName":"new-year-new-mission","marks":60}, 
+
+ {"id":2,"assignmentName":"responsive-website","marks":55}, 
+
+  {"id":3,"assignmentName":"Landing-page-responsive-using-framework","marks":57}, 
+
+   {"id":4,"assignmentName":"javascript-problem-solving","marks":60},  
+
+   {"id":5,"assignmentName":"Geometry-genious","marks":60},  
+
+   {"id":6,"assignmentName":"API-related","marks":53},  
+
+   {"id":7,"assignmentName":"Debugging","marks":60} 
+]
