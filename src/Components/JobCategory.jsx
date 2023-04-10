@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 
 const JobCategory = () => {
   const jobCategory = useLoaderData();
-  console.log(jobCategory);
 
   return (
     <div className="my-5 container">
@@ -17,22 +16,23 @@ const JobCategory = () => {
         </small>
       </p>
       <div className="row g-3">
-        {" "}
         {jobCategory.map((job) => (
-          <div className="col-md-3 border rounded-3 ">
-            <div>
-              <img
-                className="my-5 rounded-3"
-                src={job.jobLogo}
-                alt=""
-                style={{ width: 70, height: 70 }}
-              />
-              <h4>{job.jobName}</h4>
-              <p className="my-3">
-                <small>
-                  {job.jobVacancy} <span>Jobs Available</span>
-                </small>
-              </p>
+          <div className="col-md-3 ">
+            <div className="p-3 border rounded-3 ">
+              <div>
+                <img
+                  className="my-5 rounded-3"
+                  src={job.jobLogo}
+                  alt=""
+                  style={{ width: 70, height: 70 }}
+                />
+                <h4>{job.jobName}</h4>
+                <p className="my-3">
+                  <small>
+                    {job.jobVacancy} <span>Jobs Available</span>
+                  </small>
+                </p>
+              </div>
             </div>
           </div>
         ))}
