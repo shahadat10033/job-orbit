@@ -1,8 +1,13 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
 const JobCategory = () => {
-  const jobCategory = useLoaderData();
+  const [jobCategory, setJobCategory] = useState([]);
+
+  useEffect(() => {
+    fetch("/public/jobCategory.json")
+      .then((res) => res.json())
+      .then((data) => setJobCategory(data));
+  }, []);
 
   return (
     <div className="my-5 container">
