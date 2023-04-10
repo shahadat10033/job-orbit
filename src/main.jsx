@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import JobInfo from "./Components/JobInfo";
+import AppliedJob from "./Components/AppliedJob";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,11 @@ const router = createBrowserRouter([
       {
         path: "jobinfo/:jobId",
         element: <JobInfo></JobInfo>,
-        // loader: () => fetch("/public/jobListing.json"),
         loader: ({ params }) => params.jobId,
+      },
+      {
+        path: "/appliedJob",
+        element: <AppliedJob></AppliedJob>,
       },
     ],
   },
