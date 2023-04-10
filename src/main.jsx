@@ -1,14 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Home from './Home'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Root from './Components/Root';
-
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Home from "./Home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./Components/Root";
 
 const router = createBrowserRouter([
   {
@@ -18,13 +13,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Root />,
+        loader: () => fetch("/public/jobCategory.json"),
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
