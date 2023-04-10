@@ -39,7 +39,7 @@ const Statistics = () => {
         <Legend />
         <Area type="monotone" dataKey="marks" fill="#8884d8" stroke="#8884d8" />
         <Bar dataKey="id" barSize={7} fill="#413ea0" />
-        <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+        <Line type="monotone" dataKey="" stroke="#ff7300" />
       </ComposedChart>
     </div>
   );
