@@ -18,8 +18,8 @@ const Statistics = () => {
   return (
     <div>
       <ComposedChart
-        width={1000}
-        height={400}
+        width={1800}
+        height={600}
         data={data}
         margin={{
           top: 40,

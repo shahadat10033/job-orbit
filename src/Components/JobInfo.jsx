@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { addToDb } from "../utilities/fakeDB";
+import { ToastContainer } from "react-toastify";
 
 const JobInfo = () => {
   // const [value, setValue] = useState([]);
@@ -16,6 +18,10 @@ const JobInfo = () => {
         )
       );
   }, []);
+
+  const addSingleJob = (id) => {
+    addToDb(id);
+  };
 
   return (
     <div className="row container mx-auto my-5">
@@ -142,9 +148,11 @@ const JobInfo = () => {
           className="btn text-white my-2  container"
           type="button"
           style={{ backgroundColor: "#8A82FF" }}
+          onClick={() => addSingleJob(singleJob.companyName)}
         >
           Apply Now
         </button>
+        <ToastContainer />
       </div>
     </div>
   );

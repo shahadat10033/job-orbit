@@ -1,9 +1,13 @@
+import { toast } from "react-toastify";
+
 const addToDb = (id) => {
   let jobCart = getJobCart();
   // add quantity
   const quantity = jobCart[id];
   if (!quantity) {
     jobCart[id] = 1;
+  } else {
+    toast("Already added!");
   }
   localStorage.setItem("job-cart", JSON.stringify(jobCart));
 };

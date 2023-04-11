@@ -10,6 +10,8 @@ import Statistics from "./Components/Statistics";
 import ErrorPage from "./Components/ErrorPage";
 import Blog from "./Components/Blog";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/appliedJob",
         element: <AppliedJob></AppliedJob>,
+        // loader: () => fetch("/public/jobListing.json"),
       },
       {
         path: "/blog",
