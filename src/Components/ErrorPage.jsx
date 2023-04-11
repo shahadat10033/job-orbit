@@ -10,7 +10,7 @@ const ErrorPage = () => {
     >
       <div className="container d-flex flex-column justify-items-center   mx-auto my-5">
         <div className="max-w-md text-center">
-          <h2 className="mb-5 fw-bold fs-1 text-secondary">
+          <h2 className="mb-5 fw-bold fs-1 text-danger">
             <span className="fw-bold">Error</span> {status || 404}
           </h2>
           <p className="fs-2 fw-semibold  mb-5">{error?.message}</p>

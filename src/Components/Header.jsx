@@ -1,48 +1,50 @@
-import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <nav
-        className="navbar navbar-expand-lg  d-flex justify-content-between container "
-        style={{ backgroundColor: "#FAF8FF  " }}
-      >
-        <div>
-          <Link
-            to="/"
-            className=" fw-bold text-decoration-none text-dark "
-            style={{ fontSize: 32 }}
-          >
-            JOB ORBIT
+    <div className="container">
+      <Navbar expand="lg" style={{ backgroundColor: "#FAF8FF  " }}>
+        <Container fluid>
+          <Link to="/" className="text-decoration-none fw-bold">
+            <Navbar.Brand> JOB ORBIT</Navbar.Brand>
           </Link>
-        </div>
-        <div>
-          <Link
-            to="/statistics"
-            className="text-decoration-none me-4 text-secondary"
-          >
-            Statistics
-          </Link>
-          <Link
-            to="/appliedJob"
-            className="text-decoration-none me-4 text-secondary"
-          >
-            Applied jobs
-          </Link>
-          <Link to="/blog" className="text-decoration-none me-4 text-secondary">
-            Blog
-          </Link>
-        </div>
-        <div>
-          <button
-            className="btn text-white "
-            style={{ backgroundColor: "#8A82FF" }}
-          >
-            Start Applying
-          </button>
-        </div>
-      </nav>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="mx-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Link
+                to="/statistics"
+                className="text-decoration-none text-secondary"
+              >
+                <span className="me-2 ">Statistics</span>
+              </Link>
+              <Link
+                to="/appliedJob"
+                className="text-decoration-none text-secondary"
+              >
+                <span className="me-2 ">Applied Jobs</span>
+              </Link>
+              <Link to="/blog" className="text-decoration-none text-secondary">
+                <span className="me-2 ">Blog</span>
+              </Link>
+            </Nav>
+            <Link to="/appliedJob">
+              <button
+                className="btn text-white "
+                style={{ backgroundColor: "#8A82FF" }}
+              >
+                Start Applying
+              </button>
+            </Link>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </div>
   );
 };

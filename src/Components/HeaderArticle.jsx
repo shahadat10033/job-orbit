@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeaderArticle = () => {
   return (
@@ -18,12 +19,14 @@ const HeaderArticle = () => {
               job application from start to finish.
             </small>
           </p>
-          <button
-            className="btn text-white my-2 "
-            style={{ backgroundColor: "#8A82FF" }}
-          >
-            Get Started
-          </button>
+          <Link to="/">
+            <button
+              className="btn text-white my-2 "
+              style={{ backgroundColor: "#8A82FF" }}
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
         {/* article section end*/}
 

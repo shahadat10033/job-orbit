@@ -9,7 +9,6 @@ import AppliedJob from "./Components/AppliedJob";
 import Statistics from "./Components/Statistics";
 import ErrorPage from "./Components/ErrorPage";
 import Blog from "./Components/Blog";
-
 import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
@@ -24,14 +23,9 @@ const router = createBrowserRouter([
         loader: () => fetch("/public/jobListing.json"),
       },
       {
-        path: "jobinfo/:jobId",
+        path: "jobInfo/:jobId",
         element: <JobInfo></JobInfo>,
         loader: ({ params }) => params.jobId,
-      },
-      {
-        path: "/appliedJob",
-        element: <AppliedJob></AppliedJob>,
-        // loader: () => fetch("/public/jobListing.json"),
       },
       {
         path: "/blog",
@@ -43,6 +37,13 @@ const router = createBrowserRouter([
         loader: () => fetch("/public/assignment.json"),
       },
     ],
+  },
+
+  {
+    path: "/appliedJob",
+    element: <AppliedJob></AppliedJob>,
+    errorElement: <ErrorPage />,
+    // loader: () => fetch("/public/jobListing.json"),
   },
 ]);
 

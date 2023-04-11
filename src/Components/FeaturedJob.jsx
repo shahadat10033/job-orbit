@@ -80,7 +80,7 @@ const FeaturedJob = () => {
                 </div>
               </div>
               <div>
-                <Link to={`/jobinfo/${featureJob.id}`}>
+                <Link to={`/jobInfo/${featureJob.id}`}>
                   <button
                     className="btn text-white my-2 "
                     style={{ backgroundColor: "#8A82FF" }}
