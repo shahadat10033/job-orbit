@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const FeaturedJob = () => {
   const fJobs = useLoaderData();
-  const featuredJobs = fJobs.slice(0, 4);
+  const [featuredJobs, setFeatureJobs] = useState(fJobs.slice(0, 4));
+
+  // const featuredJobs = fJobs.slice(0, 4);
+  const showAllJobs = () => {
+    return setFeatureJobs(fJobs);
+  };
+  // useEffect(() => {
+
+  // }, []);
+
   // const [featuredJobs, setFeatureJobs] = useState([]);
 
   // let showAllJobs;
@@ -98,7 +107,7 @@ const FeaturedJob = () => {
         <button
           className="btn text-white my-2 "
           style={{ backgroundColor: "#8A82FF" }}
-          // onClick={showAllJobs}
+          onClick={showAllJobs}
         >
           See All Jobs
         </button>

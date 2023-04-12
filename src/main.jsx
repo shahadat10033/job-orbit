@@ -42,8 +42,8 @@ const router = createBrowserRouter([
   {
     path: "/appliedJob",
     element: <AppliedJob></AppliedJob>,
+    loader: () => fetch("/public/jobListing.json"),
     errorElement: <ErrorPage />,
-    // loader: () => fetch("/public/jobListing.json"),
   },
 ]);
 

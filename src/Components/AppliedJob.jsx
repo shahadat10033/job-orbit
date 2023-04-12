@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { getJobCart } from "../utilities/fakeDB";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 // import { useLoaderData } from "react-router-dom";
 
 const AppliedJob = () => {
-  // const allJob = useLoaderData();
-  const [value, setValue] = useState([]);
+  const value = useLoaderData();
+  const localStoredData = getJobCart();
+  const [jobCart, setJobCart] = useState(localStoredData);
+  // const [jobArray, setJobArray] = useState([]);
 
-  useEffect(() => {
-    fetch("/public/jobListing.json")
-      .then((res) => res.json())
-      .then((data) => setValue(data));
-  }, []);
-  const jobCart = getJobCart();
+  // useEffect(() => {
+  //   fetch("/public/jobListing.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setValue(data));
+  // }, []);
+  // console.log(localStoredData);
+  // console.log(jobCart);
   let job = [];
 
   for (const id in jobCart) {
@@ -22,13 +25,40 @@ const AppliedJob = () => {
       job.push(foundJob);
     }
   }
-  // const appliedJob = value.find(
-  //   (element, index) => element.companyName === Object.keys(jobCart)[index]
-  // );
+  const showOnsite = () => {
+    let job = {};
+    for (const id in localStoredData) {
+      const foundJob = value.find((element) => element.companyName === id);
+      console.log(foundJob.jobStyle === "onsite");
+      if (foundJob.jobStyle === "onsite") {
+        const x = foundJob["companyName"];
+        job[x] = 1;
+      }
 
-  // const newJobCart = Object.keys(jobCart);
+      console.log(job);
+      setJobCart(job);
+    }
 
-  console.log(job);
+    // return setJobCart({
+    //   Amazon: 1,
+    //   Microsoft: 1,
+    //   Netflix: 1,
+    // });
+  };
+  const showRemote = () => {
+    let job = {};
+    for (const id in localStoredData) {
+      const foundJob = value.find((element) => element.companyName === id);
+
+      if (foundJob.jobStyle === "remote") {
+        const x = foundJob["companyName"];
+        job[x] = 1;
+      }
+
+      console.log(job);
+      setJobCart(job);
+    }
+  };
 
   return (
     <div className="container  relative">
@@ -150,8 +180,8 @@ const AppliedJob = () => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Remote</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Onset</Dropdown.Item>
+            <Dropdown.Item onClick={showRemote}>Remote</Dropdown.Item>
+            <Dropdown.Item onClick={showOnsite}>Onsite</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>

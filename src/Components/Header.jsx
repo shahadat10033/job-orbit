@@ -22,16 +22,16 @@ const Header = () => {
                 to="/statistics"
                 className="text-decoration-none text-secondary"
               >
-                <span className="me-2 ">Statistics</span>
+                <span className="me-3 ">Statistics</span>
               </Link>
               <Link
                 to="/appliedJob"
                 className="text-decoration-none text-secondary"
               >
-                <span className="me-2 ">Applied Jobs</span>
+                <span className="me-4 ">Applied Jobs</span>
               </Link>
               <Link to="/blog" className="text-decoration-none text-secondary">
-                <span className="me-2 ">Blog</span>
+                <span className="me-3 ">Blog</span>
               </Link>
             </Nav>
             <Link to="/appliedJob">
