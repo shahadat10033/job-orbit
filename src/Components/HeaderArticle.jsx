@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const HeaderArticle = () => {
   return (
     <div className="container my-3">
-      {" "}
       <div className="row ">
         {/* article section starts */}
         <div className="col-md-6 ">

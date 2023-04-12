@@ -4,7 +4,6 @@ import { addToDb } from "../utilities/fakeDB";
 import { ToastContainer } from "react-toastify";
 
 const JobInfo = () => {
-  // const [value, setValue] = useState([]);
   const [singleJob, setSingleJob] = useState({});
   const { jobId } = useParams();
   useEffect(() => {

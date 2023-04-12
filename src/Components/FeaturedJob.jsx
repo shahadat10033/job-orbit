@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const FeaturedJob = () => {
   const fJobs = useLoaderData();
   const [featuredJobs, setFeatureJobs] = useState(fJobs.slice(0, 4));
 
-  // const featuredJobs = fJobs.slice(0, 4);
   const showAllJobs = () => {
     return setFeatureJobs(fJobs);
   };
-  // useEffect(() => {
-
-  // }, []);
-
-  // const [featuredJobs, setFeatureJobs] = useState([]);
-
-  // let showAllJobs;
-  // if (showAllJobs) {
-  //   showAllJobs = () => {
-  //     setFeatureJobs(fJobs);
-  //   };
-  // } else {
-  //   setFeatureJobs(fJobs.slice(0, 4));
-  // }
-  // setFeatureJobs(fJobs.slice(0, 4));
 
   return (
     <div className="container my-5 py-5">

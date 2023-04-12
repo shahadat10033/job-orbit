@@ -2,21 +2,12 @@ import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { getJobCart } from "../utilities/fakeDB";
 import { Link, useLoaderData } from "react-router-dom";
-// import { useLoaderData } from "react-router-dom";
 
 const AppliedJob = () => {
   const value = useLoaderData();
   const localStoredData = getJobCart();
   const [jobCart, setJobCart] = useState(localStoredData);
-  // const [jobArray, setJobArray] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("/public/jobListing.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setValue(data));
-  // }, []);
-  // console.log(localStoredData);
-  // console.log(jobCart);
   let job = [];
 
   for (const id in jobCart) {
@@ -29,21 +20,12 @@ const AppliedJob = () => {
     let job = {};
     for (const id in localStoredData) {
       const foundJob = value.find((element) => element.companyName === id);
-      console.log(foundJob.jobStyle === "onsite");
+
       if (foundJob.jobStyle === "onsite") {
         const x = foundJob["companyName"];
         job[x] = 1;
       }
-
-      console.log(job);
-      setJobCart(job);
     }
-
-    // return setJobCart({
-    //   Amazon: 1,
-    //   Microsoft: 1,
-    //   Netflix: 1,
-    // });
   };
   const showRemote = () => {
     let job = {};
@@ -54,9 +36,6 @@ const AppliedJob = () => {
         const x = foundJob["companyName"];
         job[x] = 1;
       }
-
-      console.log(job);
-      setJobCart(job);
     }
   };
 
@@ -108,7 +87,6 @@ const AppliedJob = () => {
             </Link>
           </div>
 
-          {/*  */}
           <svg
             width="149"
             height="58"
@@ -166,8 +144,6 @@ const AppliedJob = () => {
               </linearGradient>
             </defs>
           </svg>
-
-          {/*  */}
         </nav>
       </div>
       {/* navbar setion end */}
@@ -181,6 +157,7 @@ const AppliedJob = () => {
 
           <Dropdown.Menu>
             <Dropdown.Item onClick={showRemote}>Remote</Dropdown.Item>
+
             <Dropdown.Item onClick={showOnsite}>Onsite</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
