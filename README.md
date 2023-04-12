@@ -4,7 +4,7 @@ Best platform to get a good career
 
 - Live Link
 
-Hosted in Netlify -> [Job Orbit]()
+Hosted in Netlify -> [Job Orbit](https://unrivaled-blini-af272f.netlify.app/appliedJob)
 
 - React Router Dom v6.4
 

@@ -23,7 +23,7 @@ const FeaturedJob = () => {
 
       <div className="row container g-3 ">
         {featuredJobs.map((featureJob) => (
-          <div className="col-md-6">
+          <div className="col-md-6" key={featureJob.id}>
             <div className="p-3 border rounded-3">
               <img
                 src={featureJob.companyLogo}

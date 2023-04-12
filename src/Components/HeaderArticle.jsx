@@ -33,7 +33,7 @@ const HeaderArticle = () => {
         <div className="col-md-6">
           <img
             className="img-fluid rounded-3"
-            src="/public/image/download.webp"
+            src="/image/download.webp"
             alt=""
           ></img>
         </div>

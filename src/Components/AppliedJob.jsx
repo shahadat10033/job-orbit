@@ -26,6 +26,7 @@ const AppliedJob = () => {
         job[x] = 1;
       }
     }
+    setJobCart(job);
   };
   const showRemote = () => {
     let job = {};
@@ -37,6 +38,7 @@ const AppliedJob = () => {
         job[x] = 1;
       }
     }
+    setJobCart(job);
   };
 
   return (
@@ -117,8 +119,8 @@ const AppliedJob = () => {
                 y2="107.323"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#7E90FE" />
-                <stop offset="1" stop-color="#9873FF" />
+                <stop stopColor="#7E90FE" />
+                <stop offset="1" stopColor="#9873FF" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_7_252"
@@ -128,8 +130,8 @@ const AppliedJob = () => {
                 y2="107.323"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#7E90FE" />
-                <stop offset="1" stop-color="#9873FF" />
+                <stop stopColor="#7E90FE" />
+                <stop offset="1" stopColor="#9873FF" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_7_252"
@@ -139,8 +141,8 @@ const AppliedJob = () => {
                 y2="107.323"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#7E90FE" />
-                <stop offset="1" stop-color="#9873FF" />
+                <stop stopColor="#7E90FE" />
+                <stop offset="1" stopColor="#9873FF" />
               </linearGradient>
             </defs>
           </svg>
@@ -165,7 +167,10 @@ const AppliedJob = () => {
       {/*dropdown button end */}
 
       {job.map((singleJob) => (
-        <div className="d-flex justify-content-between align-items-center  my-5 border px-5">
+        <div
+          className="d-flex justify-content-between align-items-center  my-5 border px-5"
+          key={singleJob.id}
+        >
           <div className="d-flex py-3 ">
             <img
               src={singleJob.companyLogo}
@@ -191,7 +196,7 @@ const AppliedJob = () => {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-geo-alt"
+                  className="bi bi-geo-alt"
                   viewBox="0 0 16 16"
                 >
                   <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />

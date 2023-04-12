@@ -4,7 +4,7 @@ const JobCategory = () => {
   const [jobCategory, setJobCategory] = useState([]);
 
   useEffect(() => {
-    fetch("/public/jobCategory.json")
+    fetch("/jobCategory.json")
       .then((res) => res.json())
       .then((data) => setJobCategory(data));
   }, []);
@@ -22,7 +22,7 @@ const JobCategory = () => {
       </p>
       <div className="row g-3">
         {jobCategory.map((job) => (
-          <div className="col-md-3 ">
+          <div className="col-md-3 " key={job.id}>
             <div className="p-3 border rounded-3 ">
               <div>
                 <img
